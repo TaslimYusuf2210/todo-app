@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+
+<body>
+
+  <div class="background">
+    <section class="gradient-section">
+      <!-- <img class="gradient-image" src="images/bg-desktop-light.jpg" alt="bg-light"> -->
+    </section>
+  </div>
+
+  <div class="content-div">
+
+    <div class="todo">
+      <header class="header">
+        <span class="icon">TODO</span>
+        <span class="moon-icon"></span>
+      </header>
+
+      <main>
+
+        <form id="create" class="list-layout">
+          <input type="checkbox">
+          <input type="text" placeholder="Create a new todo...">
+        </form>
+        <section class="section">
+          <ul>
+          </ul>
+        </section>
+        <div id="option-con">
+          <p>5 items left</p>
+          <div class="aac hidden">
+            <button id="all" class="aac-content">All</button>
+            <button id="active" class="aac-content">Active</button>
+            <button id="completed" class="aac-content">Completed</button>
+          </div>
+          <button class="clear-completed">Clear Completed</button>
+        </div>
+
+      </main>
+
+      <div class="main-hidden">
+        <div class="sub-aac">
+          <button id="all" class="aac-content">All</button>
+          <button id="active" class="aac-content">Active</button>
+          <button id="Completed" class="aac-content">Completed</button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span class="drag-drop" draggable="true">Drag and drop to reorder list</span>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+

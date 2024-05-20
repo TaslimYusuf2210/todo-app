@@ -1,0 +1,400 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Josefin Sans";
+  position: relative;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* My style */
+
+:root {
+  --bg-image: url(images/bg-desktop-light.jpg);
+  --main-color: rgb(66, 67, 69);
+  --list-layout-background: white;
+  --footer-color: gray;
+  --checked-label: rgb(162, 160, 160);
+  --button-hover: rgb(32, 31, 31);
+  --placeholder-color: rgb(136, 136, 139);
+  --moon-icon: url(images/icon-moon.svg);
+}
+
+.darkmode {
+  --bg-image: url(images/bg-desktop-dark.jpg);
+  --main-color: rgb(209, 210, 213);
+  --list-layout-background: hsl(235, 21%, 11%);
+  --footer-color: gray;
+  --checked-label: rgb(120, 118, 118);
+  --button-hover: rgb(210, 198, 198);
+  --placeholder-color: rgb(184, 184, 188);
+  --moon-icon: url(images/icon-sun.svg);
+  --content-div-background: black;
+}
+
+.background {
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--content-div-background);
+}
+
+.gradient-section {
+  height: 40vh;
+  width: 100%;
+  background: var(--bg-image);
+  background-size: cover;
+}
+
+/* todo-list */
+
+.content-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  /* background-color: var(--content-div-background); */
+}
+
+.todo {
+  /* background-color: rgb(246, 226, 8); */
+  width: 37rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  gap: 2rem;
+}
+
+.icon {
+  letter-spacing: 1rem;
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.moon-icon {
+  background-image: var(--moon-icon);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.xmark {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: lighter;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.xmark:hover {
+  opacity: 1;
+}
+
+main {
+  color: var(--main-color);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.check-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.list-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+  padding: 1.5rem;
+  border-top: 0.5px solid hsl(0, 5%, 84%);
+  border-bottom: 0.5px solid hsl(0, 5%, 84%);
+  gap: 2rem;
+  font-size: 18px;
+  background-color: var(--list-layout-background);
+  cursor: move;
+}
+
+#create {
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  color: rgb(136, 136, 139);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+input[type="text"] {
+  border: none;
+  background-color: var(--list-layout-background);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: none;
+  color: rgb(136, 136, 139);
+}
+
+::placeholder {
+  color: var(--placeholder-color);
+}
+
+.first-list {
+  border-radius: 5px 5px 0 0;
+}
+
+.border-radius {
+  border-radius: 5px;
+}
+
+#option-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 3.25rem;
+  border-top: 0.5px solid hsl(0, 5%, 84%);
+  color: var(--footer-color);
+  gap: 3rem;
+  background-color: var(--list-layout-background);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--list-layout-background);
+}
+
+.aac {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.aac-content {
+  color: var(--footer-color);
+}
+
+.aac-content:hover {
+  color: var(--button-hover);
+}
+
+.clear-completed {
+  color: var(--footer-color);
+}
+
+.clear-completed:hover {
+  color: var(--button-hover);
+}
+
+.main-hidden {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+  /* margin-top: 3rem; */
+  color: var(--footer-color);
+}
+
+.drag-drop{
+  cursor: pointer;
+}
+
+.drag-list-light {
+  background: hsl(235, 21%, 11%);
+  color: white;
+}
+
+.drag-list-dark {
+  background: white;
+  color: rgb(66, 67, 69);
+}
+
+/* checkbox styling */
+input[type="checkbox"] {
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  background: var(--list-layout-background);
+  border-radius: 50%;
+  border: 1px solid hsl(0, 5%, 84%);
+  padding: 5px;
+}
+
+input[type="checkbox"]:checked {
+  content: \f00c;
+  font-family: Font Awesome 5 Free;
+  font-weight: 900;
+  font-size: 25px;
+  background: url("images/check-solid.svg"),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-size: 10px, 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="checkbox"]:checked ~ label {
+  text-decoration: line-through;
+  color: var(--checked-label);
+}
+
+input[type="checkbox"]:hover {
+  background: url("images/check-solid.svg"),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-size: 10px, 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+/************* Ipad screen size ****************/
+@media (max-width: 850px) {
+  .todo {
+    width: 30rem;
+    /* gap: 1.5rem; */
+  }
+  .gradient-section {
+    height: 19rem;
+  }
+  .list-layout {
+    height: 3rem;
+    gap: 2rem;
+    font-size: 16px;
+  }
+  #option-con {
+    font-size: 14px;
+  }
+  .footer {
+    font-size: 14px;
+  }
+}
+@media (max-width: 550px) {
+  .todo {
+    width: 25rem;
+  }
+  .list-layout {
+    height: 2.5rem;
+    font-size: 14px;
+  }
+  #option-con {
+    font-size: 14px;
+    justify-content: space-around;
+    gap: 8rem;
+  }
+  .footer {
+    font-size: 14px;
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+/**************** mobile screen size *****************/
+@media (max-width: 450px) {
+  .main-hidden {
+    display: block;
+  }
+  .list-layout {
+    height: 2rem;
+    font-size: 12px;
+  }
+  #option-con {
+    font-size: 12px;
+  }
+  .footer {
+    font-size: 12px;
+  }
+  .sub-aac {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    height: 2rem;
+    gap: 1.5rem;
+    color: var(--footer-color);
+    border: none;
+    background-color: var(--list-layout-background);
+    font-size: 11px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+  }
+  .icon {
+    letter-spacing: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 400;
+  }
+  .moon-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
